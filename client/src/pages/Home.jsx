@@ -4,7 +4,7 @@ import Spinner from "../components/Spinner";
 import { Link } from "react-router-dom";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
-import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md";
+import { MdOutlineAddBox } from "react-icons/md";
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -56,7 +56,7 @@ const Home = () => {
                   {index + 1}
                 </td>
                 <td className="border border-slate-700 rounded-md text-center">
-                  {book.title}
+                  <Link to={`/books/details/${book._id}`}>{book.title}</Link>
                 </td>
                 <td className="border border-slate-700 rounded-md text-center max-md:hidden">
                   {book.author}
@@ -73,7 +73,7 @@ const Home = () => {
                       <AiOutlineEdit className="text-2x1 text-yellow-800" />
                     </Link>
                     <Link to={`/books/delete/${book._id}`}>
-                      <MdOutlineDelete className="text-2x1 text-red-800" />
+                      <AiOutlineDelete className="text-2x1 text-red-800" />
                     </Link>
                   </div>
                 </td>
