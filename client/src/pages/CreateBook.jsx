@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
 import axios from "axios";
@@ -10,7 +10,7 @@ const CreateBook = () => {
   const [publishYear, setPublishYear] = useState("");
   const [loading, setLoading] = useState("");
   const navigate = useNavigate();
-  const handleSaveBook = async () => {
+  const handleSaveBook = () => {
     const data = { title, author, publishYear };
     setLoading(true);
     axios
